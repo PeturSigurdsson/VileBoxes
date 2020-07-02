@@ -29,6 +29,15 @@ main()
 <script type="text/javascript" src="initShaders.js"></script>
 <script type="text/javascript" src="MV.js"></script>
 <script type="text/javascript" src="spadi-orvar.js"></script>
+<script type="text/javascript"> 
+	// Function to open fullscreen mode
+	function goFullscreen() {
+  	canvas.requestFullscreen 				&& canvas.requestFullscreen() 	||
+  	canvas.mozRequestFullScreen 		&& canvas.mozRequestFullScreen() 	||
+  	canvas.webkitRequestFullscreen 	&& canvas.webkitRequestFullscreen() 	||
+  	canvas.msRequestFullscreen 			&& canvas.msRequestFullscreen();
+  }
+</script>
 <style>
 	.go {
 		position: absolute;
