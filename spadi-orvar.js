@@ -37,6 +37,14 @@ window.onload = function init() {
     gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vPosition );
 	
+
+	// Function to open fullscreen mode
+	function goFullscreen() {
+  		gl-canvas.requestFullscreen 		&& gl-canvas.requestFullscreen() 		||
+  		gl-canvas.mozRequestFullScreen 		&& gl-canvas.mozRequestFullScreen() 	||
+  		gl-canvas.webkitRequestFullscreen 	&& gl-canvas.webkitRequestFullscreen() 	||
+  		gl-canvas.msRequestFullscreen 		&& gl-canvas.msRequestFullscreen();
+  	}
 	
     // Event listener for keyboard
     window.addEventListener("keydown", function(e){
