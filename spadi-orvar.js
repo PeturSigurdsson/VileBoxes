@@ -40,6 +40,7 @@ window.onload = function init() {
 
 	// Function to open fullscreen mode
 	function goFullscreen() {
+		console.log("Triggered");
   		canvas.requestFullscreen 		&& canvas.requestFullscreen() 	||
   		canvas.mozRequestFullScreen 	&& canvas.mozRequestFullScreen() 	||
   		canvas.webkitRequestFullscreen 	&& canvas.webkitRequestFullscreen() 	||
