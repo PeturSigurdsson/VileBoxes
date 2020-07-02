@@ -40,10 +40,10 @@ window.onload = function init() {
 
 	// Function to open fullscreen mode
 	function goFullscreen() {
-  		gl-canvas.requestFullscreen 		&& gl-canvas.requestFullscreen() 		||
-  		gl-canvas.mozRequestFullScreen 		&& gl-canvas.mozRequestFullScreen() 	||
-  		gl-canvas.webkitRequestFullscreen 	&& gl-canvas.webkitRequestFullscreen() 	||
-  		gl-canvas.msRequestFullscreen 		&& gl-canvas.msRequestFullscreen();
+  		canvas.requestFullscreen 		&& canvas.requestFullscreen() 	||
+  		canvas.mozRequestFullScreen 	&& canvas.mozRequestFullScreen() 	||
+  		canvas.webkitRequestFullscreen 	&& canvas.webkitRequestFullscreen() 	||
+  		canvas.msRequestFullscreen 		&& canvas.msRequestFullscreen();
   	}
 	
     // Event listener for keyboard
