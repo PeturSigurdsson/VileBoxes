@@ -29,13 +29,14 @@ main()
 <script type="text/javascript" src="initShaders.js"></script>
 <script type="text/javascript" src="MV.js"></script>
 <script type="text/javascript" src="spadi-orvar.js"></script>
-<script type="text/javascript"> 
-	// Function to open fullscreen mode
-	function goFullscreen() {
-  	canvas.requestFullscreen 				&& canvas.requestFullscreen() 	||
-  	canvas.mozRequestFullScreen 		&& canvas.mozRequestFullScreen() 	||
-  	canvas.webkitRequestFullscreen 	&& canvas.webkitRequestFullscreen() 	||
-  	canvas.msRequestFullscreen 			&& canvas.msRequestFullscreen();
+<script type="text/javascript">
+	
+	let gameHolder = document.getElementById("gameHolder");
+	goFullscreen = () => {
+  	gameHolder.requestFullscreen 				&& gameHolder.requestFullscreen() 	||
+  	gameHolder.mozRequestFullScreen 		&& gameHolder.mozRequestFullScreen() 	||
+  	gameHolder.webkitRequestFullscreen 	&& gameHolder.webkitRequestFullscreen() 	||
+  	gameHolder.msRequestFullscreen 			&& gameHolder.msRequestFullscreen();
   }
 </script>
 <style>
@@ -55,10 +56,12 @@ main()
 	}
 </style>
 <body>
-<div class ="go" ondblclick="goFullscreen()"><div id = "goScreen", class = "goSc"></div></div>
-<canvas id="gl-canvas" ondblclick="goFullscreen()" width="1000" height="600">>
-Oops ... your browser doesn't support the HTML5 canvas element
-</canvas>
-<div id = "scoreBoard" , class = "goSc"></div>
+	<div id="gameHolder">
+		<div class ="go" ondblclick="goFullscreen()"><div id = "goScreen", class = "goSc"></div></div>
+		<canvas id="gl-canvas" ondblclick="goFullscreen()" width="1000" height="600">>
+			Oops ... your browser doesn't support the HTML5 canvas element
+		</canvas>
+		<div id = "scoreBoard" class = "goSc"></div>
+	</div>
 </body>
 </html>
