@@ -33,6 +33,7 @@ main()
 	
 	let gameHolder = document.getElementById("gameHolder");
 	goFullscreen = () => {
+		console.log(gameHolder);
   	gameHolder.requestFullscreen 				&& gameHolder.requestFullscreen() 	||
   	gameHolder.mozRequestFullScreen 		&& gameHolder.mozRequestFullScreen() 	||
   	gameHolder.webkitRequestFullscreen 	&& gameHolder.webkitRequestFullscreen() 	||
