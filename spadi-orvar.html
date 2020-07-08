@@ -41,8 +41,8 @@ main()
   		(gameHolder.webkitRequestFullscreen && gameHolder.webkitRequestFullscreen())||
   		(gameHolder.msRequestFullscreen 	&& gameHolder.msRequestFullscreen());
 		let c = document.getElementById("gl-canvas");
-		c.style.height = window.screen.height - 50;
-		c.style.width = window.screen.width;
+		c.style.height = (window.screen.height - 50) + "px";
+		c.style.width = window.screen.width + "px";
 		isFull = true;
 	}
 
@@ -52,8 +52,8 @@ main()
   		(document.webkitExitFullscreen 	&& document.webkitExitFullscreen()) 	||
   		(document.msExitFullscreen 		&& document.msExitFullscreen());
 		let c = document.getElementById("gl-canvas");
-		c.style.height = 600;
-		c.style.width = 1000;
+		c.style.height = "600px";
+		c.style.width = "1000px";
 		isFull = false;
 	}
 </script>
@@ -73,7 +73,7 @@ main()
 		align-items: center;
 	}
 	.goSc{
-		margin: auto;
+		padding: auto;
 		font-family: "consolas";
 		font-size: 50px;
 	}
