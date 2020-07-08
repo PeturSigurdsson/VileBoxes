@@ -30,7 +30,7 @@ window.onload = function init() {
     gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vPosition );
 	
-	console.log(isFull);
+	console.log("Is the canvas in fullscreen? ", isFull);
 	
     // Event listener for keyboard
     window.addEventListener("keydown", function(e){
