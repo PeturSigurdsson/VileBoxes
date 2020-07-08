@@ -43,7 +43,32 @@ main()
 
 	#gl-canvas {
 		height: 90%;
-		width: 90%;
+		width: 100%;
+	}
+
+	.score{
+		width: 100%;
+		display: flex;
+		align-items: space-between;	
+	}
+	.info{
+		height: 50px;
+		width: 50px;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-right: 2vw;
+		border-radius: 50%;
+		display: flex; 
+		background-color: rgba(0, 0, 255, 0.4);
+		vertical-align: 90%;
+	}
+	span {
+  		margin: auto;
+  		vertical-align: middle;
+		font-family: sans-serif;
+		font-size: 30px;
+		font-weight: 900;
+		color: white;
 	}
 	.holder {
 		margin: auto;
@@ -61,21 +86,48 @@ main()
 		display: flex;
 		align-items: center;
 	}
+	.commands {
+		position: absolute;
+		top: 20%;
+		padding: 5vw;
+		display: flex;
+		align-items: center;
+		visibility: hidden;
+		background-color: white;
+		font-family: consolas;
+		font-size: 20px;
+		color: black;
+	}
 	.goSc{
 		margin: auto;
-		font-family: "consolas";
+		font-family: consolas;
 		font-size: 50px;
+	}
+	#scoreBoard{
+		margin-left: 2vw;
 	}
 </style>
 <body>
 	<div id="gameHolder" class="holder" ondblclick="toggleFullscreen()">
-		<div class ="go">
+		<div class="go">
 			<div id="goScreen", class="goSc"></div>
+		</div>
+		<div id="directions" class="commands">
+			<p> 
+				Control paddle with left and right arrow. <br> 
+				Affect ball direction with wasd. <br>
+				Press Enter to start new game.
+			</p>
 		</div>
 		<canvas id="gl-canvas" width="1000" height="600">
 			Oops ... your browser doesn't support the HTML5 canvas element
 		</canvas>
-		<div id = "scoreBoard" class = "goSc"></div>
+		<div class="score">
+			<div id = "scoreBoard" class = "goSc"></div>
+			<div class="info" onclick="showDirs()">
+				<span>i</span>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -4,7 +4,7 @@ var points;
 var box = [], bars = [];
 var spadi, kula, xball, yball, xmove, objects, go, loss, maxSpeed, spadiSpeed;
 var isFull;
-var initialSize, fullscreenSize, toggleFullscreen;
+var initialSize, fullscreenSize, toggleFullscreen, showDirs;
 window.onload = function init() {
 
 	canvas = document.getElementById("gl-canvas");
@@ -55,6 +55,11 @@ window.onload = function init() {
 			(document.webkitExitFullscreen && document.webkitExitFullscreen()) ||
 			(document.msExitFullscreen && document.msExitFullscreen());
 		isFull = false;
+	}
+
+	showDirs = () => {
+		let dirs = document.getElementById("directions");
+		dirs.style.visibility = (dirs.style.visibility == "hidden") ? "visible" : "hidden";
 	}
 
 	// Event listener for keyboard
