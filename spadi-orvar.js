@@ -1,10 +1,3 @@
-/////////////////////////////////////////////////////////////////
-//    Sýnidæmi í Tölvugrafík
-//     Sýnir notkun á lyklaborðsatburðum til að hreyfa spaða
-//
-//    Hjálmtýr Hafsteinsson, janúar 2018
-//    Moded by Pétur Sigurðsson pes14.
-/////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
 var points;
@@ -36,6 +29,8 @@ window.onload = function init() {
     var vPosition = gl.getAttribLocation( program, "vPosition" );
     gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vPosition );
+	
+	console.log(isFull);
 	
     // Event listener for keyboard
     window.addEventListener("keydown", function(e){
