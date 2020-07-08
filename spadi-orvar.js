@@ -29,9 +29,7 @@ window.onload = function init() {
     var vPosition = gl.getAttribLocation( program, "vPosition" );
     gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vPosition );
-	
-	console.log("Is the canvas in fullscreen? ", isFull);
-	
+		
     // Event listener for keyboard
     window.addEventListener("keydown", function(e){
         switch( e.keyCode ) {
