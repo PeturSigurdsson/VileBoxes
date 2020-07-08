@@ -33,7 +33,7 @@ main()
 	var isFull = false;
 	toggleFullscreen = () => {
 		let gameHolder = document.getElementById("gameHolder");
-		isFull && exitFullscreen() || !isFull && enterFullscreen(gameHolder);
+		(isFull && exitFullscreen()) || (!isFull && enterFullscreen(gameHolder));
 	}
 	enterFullscreen = (gameHolder) => {
   		(gameHolder.requestFullscreen 		&& gameHolder.requestFullscreen())		||
@@ -43,7 +43,8 @@ main()
 		let c = document.getElementById("gl-canvas");
 		c.style.height = (window.screen.height - 50) + "px";
 		c.style.width = window.screen.width + "px";
-		console.log("Style: ",c.style);
+		gameHolder.style.height = (window.screen.height - 50) + "px";
+		gameHolder.style.width = window.screen.width + "px";
 		isFull = true;
 	}
 
@@ -55,6 +56,8 @@ main()
 		let c = document.getElementById("gl-canvas");
 		c.style.height = "600px";
 		c.style.width = "1000px";
+		gameHolder.style.height = (window.screen.height - 50) + "px";
+		gameHolder.style.width = window.screen.width + "px";
 		isFull = false;
 	}
 </script>
