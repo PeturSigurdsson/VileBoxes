@@ -41,7 +41,7 @@ main()
   		gameHolder.webkitRequestFullscreen 	&& gameHolder.webkitRequestFullscreen() 	||
   		gameHolder.msRequestFullscreen 		&& gameHolder.msRequestFullscreen();
 		let c = document.getElementById("gl-canvas");
-		c.height = window.screen.height - 50;
+		c.height = window.screen.height;
 		c.width = window.screen.width;
 		return true;
 	}
