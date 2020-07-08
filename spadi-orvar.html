@@ -40,6 +40,9 @@ main()
   		gameHolder.mozRequestFullScreen 	&& gameHolder.mozRequestFullScreen() 	||
   		gameHolder.webkitRequestFullscreen 	&& gameHolder.webkitRequestFullscreen() 	||
   		gameHolder.msRequestFullscreen 		&& gameHolder.msRequestFullscreen();
+		let c = document.getElementById("gl-canvas");
+		c.height = window.screen.height - 50;
+		c.width = window.screen.width;
 		return true;
 	}
 
@@ -48,6 +51,9 @@ main()
   		document.mozCloseFullScreen 	&& document.mozCloseFullScreen() 	||
   		document.webkitExitFullscreen 	&& document.webkitExitFullscreen() 	||
   		document.msExitFullscreen 		&& document.msExitFullscreen();
+		let c = document.getElementById("gl-canvas");
+		c.height = 600px;
+		c.width = 1000px;
 		return false;
 	}
 </script>
