@@ -269,7 +269,7 @@ function boxCollision() {
 		createBox();
 	}
 	if (bars.length > 9) {
-		gameOver("Congratulations! <br> you've destroyed the vile red <br> boxes and saved the universe. <br> Consider yourself a hero.");
+		gameOver("Congratulations! <br> You've destroyed the vile red <br> boxes and saved the universe. <br> Consider yourself a hero.");
 	}
 
 }
