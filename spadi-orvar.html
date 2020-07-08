@@ -29,68 +29,52 @@ main()
 <script type="text/javascript" src="initShaders.js"></script>
 <script type="text/javascript" src="MV.js"></script>
 <script type="text/javascript" src="spadi-orvar.js"></script>
-<script type="text/javascript">
-	var isFull = false;
-	toggleFullscreen = () => {
-		let gameHolder = document.getElementById("gameHolder");
-		if(isFull) exitFullscreen();
-		else enterFullscreen(gameHolder);
-	}
-	enterFullscreen = (gameHolder) => {
-  		(gameHolder.requestFullscreen 		&& gameHolder.requestFullscreen())		||
-  		(gameHolder.mozRequestFullScreen 	&& gameHolder.mozRequestFullScreen())	||
-  		(gameHolder.webkitRequestFullscreen && gameHolder.webkitRequestFullscreen())||
-  		(gameHolder.msRequestFullscreen 	&& gameHolder.msRequestFullscreen());
-		let c = document.getElementById("gl-canvas");
-		c.style.height = (window.screen.height - 50) + "px";
-		c.style.width = window.screen.width + "px";
-		gameHolder.style.height = (window.screen.height - 50) + "px";
-		gameHolder.style.width = window.screen.width + "px";
-		isFull = true;
+
+<style>
+	#gameHolder:not(:fullscreen){
+		height: 90vh;
+		width: 60vw;
 	}
 
-	exitFullscreen = () => {
-		(document.exitFullscreen 		&& document.exitFullscreen())	||
-  		(document.mozCloseFullScreen 	&& document.mozCloseFullScreen()) 	||
-  		(document.webkitExitFullscreen 	&& document.webkitExitFullscreen()) 	||
-  		(document.msExitFullscreen 		&& document.msExitFullscreen());
-		let c = document.getElementById("gl-canvas");
-		c.style.height = "600px";
-		c.style.width = "1000px";
-		gameHolder.style.height = "600px";
-		gameHolder.style.width = "1000px";
-		isFull = false;
+	#gameHolder:fullscreen {
+		height: 90vh;
+		width: 90vw;
 	}
-</script>
-<style>
+
+	#gl-canvas {
+		height: 90%;
+		width: 90%;
+	}
 	.holder {
-		margin: 10px;
-		height: 600px;
-		width: 1000px;
+		margin: auto;
+		height: 90vh;
+		width: 90vw;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
+		background-color: white;
 	}
 	.go {
 		position: absolute;
-		height: 600px;
-		width: 1000px;
+		height: 80vh;
+		width: 90vw;
+		display: flex;
+		align-items: center;
 	}
 	.goSc{
 		margin: auto;
 		font-family: "consolas";
 		font-size: 50px;
-		text-shadow: 1px 1px 4px white;
 	}
 </style>
 <body>
 	<div id="gameHolder" class="holder" ondblclick="toggleFullscreen()">
 		<div class ="go">
-			<div id = "goScreen", class = "go goSc">
-			</div>
-			<canvas id="gl-canvas" width="1000" height="600">
-				Oops ... your browser doesn't support the HTML5 canvas element
-			</canvas>
+			<div id="goScreen", class="goSc"></div>
 		</div>
+		<canvas id="gl-canvas" width="1000" height="600">
+			Oops ... your browser doesn't support the HTML5 canvas element
+		</canvas>
 		<div id = "scoreBoard" class = "goSc"></div>
 	</div>
 </body>
