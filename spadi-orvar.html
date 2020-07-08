@@ -41,9 +41,9 @@ main()
   		gameHolder.webkitRequestFullscreen 	&& gameHolder.webkitRequestFullscreen() 	||
   		gameHolder.msRequestFullscreen 		&& gameHolder.msRequestFullscreen();
 		let c = document.getElementById("gl-canvas");
-		c.height = window.screen.height;
+		c.height = window.screen.height - 50;
 		c.width = window.screen.width;
-		return true;
+		isFull = true;
 	}
 
 	exitFullscreen = () => {
@@ -52,9 +52,9 @@ main()
   		document.webkitExitFullscreen 	&& document.webkitExitFullscreen() 	||
   		document.msExitFullscreen 		&& document.msExitFullscreen();
 		let c = document.getElementById("gl-canvas");
-		c.height = 600px;
-		c.width = 1000px;
-		return false;
+		c.height = 600;
+		c.width = 1000;
+		isFull = false;
 	}
 </script>
 <style>
