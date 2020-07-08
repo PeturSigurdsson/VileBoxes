@@ -30,13 +30,26 @@ main()
 <script type="text/javascript" src="MV.js"></script>
 <script type="text/javascript" src="spadi-orvar.js"></script>
 <script type="text/javascript">
-	goFullscreen = () => {
+	var isFull = false;
+	toggleFullscreen = () => {
 		let gameHolder = document.getElementById("gameHolder");
-  	gameHolder.requestFullscreen 				&& gameHolder.requestFullscreen() 	||
-  	gameHolder.mozRequestFullScreen 		&& gameHolder.mozRequestFullScreen() 	||
-  	gameHolder.webkitRequestFullscreen 	&& gameHolder.webkitRequestFullscreen() 	||
-  	gameHolder.msRequestFullscreen 			&& gameHolder.msRequestFullscreen();
-  }
+		isFull && exitFullscreen() || !isFull && enterFullscreen(gameHolder);
+	}
+	enterFullscreen = (gameHolder) => {
+  		gameHolder.requestFullscreen 		&& gameHolder.requestFullscreen() 	||
+  		gameHolder.mozRequestFullScreen 	&& gameHolder.mozRequestFullScreen() 	||
+  		gameHolder.webkitRequestFullscreen 	&& gameHolder.webkitRequestFullscreen() 	||
+  		gameHolder.msRequestFullscreen 		&& gameHolder.msRequestFullscreen();
+		return true;
+	}
+
+	exitFullscreen = () => {
+		document.exitFullscreen 		&& document.exitFullscreen() 	||
+  		document.mozCloseFullScreen 	&& document.mozCloseFullScreen() 	||
+  		document.webkitExitFullscreen 	&& document.webkitExitFullscreen() 	||
+  		document.msExitFullscreen 		&& document.msExitFullscreen();
+		return false;
+	}
 </script>
 <style>
 	.holder {
@@ -62,7 +75,7 @@ main()
 <body>
 	<div id="gameHolder" class="holder" ondblclick="goFullscreen()">
 		<div class ="go" ondblclick="goFullscreen()">
-			<div id = "goScreen", class = "goSc">
+			<div id = "goScreen", class = "go goSc">
 			</div>
 			<canvas id="gl-canvas" ondblclick="goFullscreen()" width="1000" height="600">
 				Oops ... your browser doesn't support the HTML5 canvas element
