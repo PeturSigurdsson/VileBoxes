@@ -41,8 +41,8 @@ main()
   		(gameHolder.webkitRequestFullscreen && gameHolder.webkitRequestFullscreen())||
   		(gameHolder.msRequestFullscreen 	&& gameHolder.msRequestFullscreen());
 		let c = document.getElementById("gl-canvas");
-		c.height = window.screen.height - 50;
-		c.width = window.screen.width;
+		c.style.height = window.screen.height - 50;
+		c.style.width = window.screen.width;
 		isFull = true;
 	}
 
@@ -52,8 +52,8 @@ main()
   		(document.webkitExitFullscreen 	&& document.webkitExitFullscreen()) 	||
   		(document.msExitFullscreen 		&& document.msExitFullscreen());
 		let c = document.getElementById("gl-canvas");
-		c.height = 600;
-		c.width = 1000;
+		c.style.height = 600;
+		c.style.width = 1000;
 		isFull = false;
 	}
 </script>
