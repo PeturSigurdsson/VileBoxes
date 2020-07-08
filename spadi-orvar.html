@@ -36,10 +36,10 @@ main()
 		isFull && exitFullscreen() || !isFull && enterFullscreen(gameHolder);
 	}
 	enterFullscreen = (gameHolder) => {
-  		gameHolder.requestFullscreen 		&& gameHolder.requestFullscreen() 	||
-  		gameHolder.mozRequestFullScreen 	&& gameHolder.mozRequestFullScreen() 	||
-  		gameHolder.webkitRequestFullscreen 	&& gameHolder.webkitRequestFullscreen() 	||
-  		gameHolder.msRequestFullscreen 		&& gameHolder.msRequestFullscreen();
+  		(gameHolder.requestFullscreen 		&& gameHolder.requestFullscreen())		||
+  		(gameHolder.mozRequestFullScreen 	&& gameHolder.mozRequestFullScreen())	||
+  		(gameHolder.webkitRequestFullscreen && gameHolder.webkitRequestFullscreen())||
+  		(gameHolder.msRequestFullscreen 	&& gameHolder.msRequestFullscreen());
 		let c = document.getElementById("gl-canvas");
 		c.height = window.screen.height - 50;
 		c.width = window.screen.width;
@@ -47,10 +47,10 @@ main()
 	}
 
 	exitFullscreen = () => {
-		document.exitFullscreen 		&& document.exitFullscreen() 	||
-  		document.mozCloseFullScreen 	&& document.mozCloseFullScreen() 	||
-  		document.webkitExitFullscreen 	&& document.webkitExitFullscreen() 	||
-  		document.msExitFullscreen 		&& document.msExitFullscreen();
+		(document.exitFullscreen 		&& document.exitFullscreen())	||
+  		(document.mozCloseFullScreen 	&& document.mozCloseFullScreen()) 	||
+  		(document.webkitExitFullscreen 	&& document.webkitExitFullscreen()) 	||
+  		(document.msExitFullscreen 		&& document.msExitFullscreen());
 		let c = document.getElementById("gl-canvas");
 		c.height = 600;
 		c.width = 1000;
